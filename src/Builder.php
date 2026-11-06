@@ -433,7 +433,7 @@ class Builder
      *
      * @return Token
      */
-    public function getToken(Signer $signer = null, Key $key = null)
+    public function getToken(?Signer $signer = null, ?Key $key = null)
     {
         $signer = $signer ?: $this->signer;
         $key = $key ?: $this->key;
@@ -461,7 +461,7 @@ class Builder
      *
      * @return Signature|null
      */
-    private function createSignature(array $payload, Signer $signer = null, Key $key = null)
+    private function createSignature(array $payload, ?Signer $signer = null, ?Key $key = null)
     {
         if ($signer === null || $key === null) {
             return null;
